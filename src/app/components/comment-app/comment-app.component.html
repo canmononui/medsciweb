@@ -1,0 +1,76 @@
+<!-- <div class="row no-gutters align-items-center mb-3">
+    <div class="col-auto">
+        <h4 class="mr-2">ความคิดเห็นเกี่ยวกับแอปพลิเคชั่น</h4>             
+    </div>
+    <div class="col">
+      <a routerLink="/scholarship-input" class="btn btn-success btn-circle">
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+  </div> -->
+  <div class="container mt-3 mb-4">
+  <h4 class="mb-3">ความคิดเห็นเกี่ยวกับแอปพลิเคชั่น</h4>
+
+
+  <!-- CARD 1 -->    
+  <div class="card shadow mb-3"  *ngFor="let data of (CommentAppShow)?.slice().reverse()">
+    <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col-auto">
+              <img src="../../assets/img/stu.jpg" width="60" height="60" class="rounded-circle mr-2">              
+          </div>
+          <div class="col">
+            <div class="font-weight-bold mb-1" style="line-height: 1;">{{ data.value.name }}</div>
+            <div style="line-height: 1;">
+              <span>{{ data.value.date }}</span>
+            </div>
+          </div>
+          <div class="col" style="text-align: right;">
+            <a routerLink="/comment-app-reply" (click)="commentAppEdit(data)" class="btn btn-warning btn-circle">
+              <i class="fas fa-reply"></i>
+            </a>
+            <!-- <a href="#" class="btn btn-danger btn-circle ml-2">
+              <i class="fas fa-trash"></i>
+            </a> -->
+          </div>
+          
+        </div>
+
+      <div class="container mt-4">
+        <p>{{ data.value.text }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+<!-- CARD 1 END -->
+
+<!-- CARD 1 -->    
+<!-- <div class="card shadow mb-3">
+    <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col-auto">
+              <img src="../../assets/img/stu.jpg" width="60" height="60" class="rounded-circle mr-2">              
+          </div>
+          <div class="col">
+            <div class="font-weight-bold mb-1" style="line-height: 1;">61520835 นางสาวธัญญารัตน์ ไชยชนะ</div>
+            <div style="line-height: 1;">
+              <span>10 พฤษภาคม 2560</span>
+            </div>
+          </div>
+          <div class="col" style="text-align: right;">
+            <a routerLink="/comment-app-reply" class="btn btn-warning btn-circle">
+              <i class="fas fa-reply"></i>
+            </a>
+          </div>
+        </div>
+
+      <div class="container mt-4">
+        <p>อยากให้เพิ่มฟังก์ชั่นการ.........
+        </p>
+      </div>
+    </div>
+  </div> -->
+<!-- CARD 1 END -->
+
+</div>

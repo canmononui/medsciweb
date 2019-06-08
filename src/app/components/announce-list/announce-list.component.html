@@ -1,0 +1,158 @@
+<div class="container mt-3 mb-4">
+      
+<div class="row no-gutters align-items-center mb-3">
+    <div class="col-auto">
+        <h4 class="mr-2">ประกาศข่าวสาร</h4>             
+    </div>
+    <div class="col">
+      <a routerLink="/announce-add" class="btn btn-success btn-circle">
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+  </div>
+    <!-- TEST LOOP PRINT DATA FROM FIREBASE -->
+      <!-- <div class="container">
+        <p>Show all items</p>
+        <ul>
+        <li *ngFor="let items of items | async">
+             {{ items.topic | json }}
+          </li>
+        </ul>
+      </div> -->
+
+<!-- 
+      <table class='table'>
+          <thead>
+          <tr>
+          <td>Key</td>
+          <td>Name</td>
+          <td>Description</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of wikis">
+            <td>{{data.key}}</td>
+          <td>{{data.value.name}}</td>
+          <td>{{data.value.description}}</td>
+          <td><button type="button" (click)="delWiki(data)" >Delete</button></td>
+          </tr>
+          </tbody>
+          </table> -->
+
+          <!-- <form>
+              <div>
+                <label for="admin"><b>Admin: </b></label>
+                <input type="text" [(ngModel)]="wiki.admin" name="admin">
+              </div>
+            <div>
+            </div>
+            </form> -->
+
+
+  
+<!-- CARD LOOP DATA -->    
+<!-- <div class="card shadow mb-3" *ngFor="let MicroAnnounce of MicroAnnounce | async"> -->
+<!-- <div class="card shadow mb-3" *ngFor="let MicroAnnounce of (MicroAnnounce | async)?.slice().reverse()"> -->
+
+<!-- .REVERSE IS BACKWARD DATA (END TO START) -->
+<div class="card shadow mb-3" *ngFor="let data of (MicroAnnounce)?.slice().reverse()">
+
+  <div class="card-body">
+      <div class="row no-gutters align-items-center">
+        <div class="col-auto">
+            <img src="../../assets/img/logo.jpg" width="60" height="60" class="rounded-circle mr-2">              
+        </div>
+        <div class="col">
+          <div class="font-weight-bold mb-1" style="line-height: 1;">{{ data.value.branch }}</div>
+
+          <div style="line-height: 1;">
+            <span>{{ data.value.time }}</span>
+          </div>
+        </div>
+        <div class="col" style="text-align: right;">
+          <a routerLink="/announce-edit" (click)="announceEdit(data)" class="btn btn-warning btn-circle">
+          <!-- <a (click)="announceEdit(data)" class="btn btn-warning btn-circle"> -->
+           
+            <i class="far fa-edit"></i>
+          </a>
+
+          <a routerLink="/announce-list" (click)="dataRemove(data)" class="btn btn-danger btn-circle ml-2" data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fas fa-trash"></i>
+          </a>
+        </div>
+        
+      </div>
+
+    <div class="container mt-4">
+      <h5>{{ data.value.topic }}</h5>
+      <p>{{ data.value.description }}</p>
+    </div>
+
+  <div class="container row text-center mt-4 mb-1">
+      <div class="col">
+        <div class="font-weight-bold" style="line-height: 1;">
+          <span style="font-size: 2em;">
+            <i class="fas fa-heart"></i>
+          </span>
+        </div>
+        <div class="font-weight-bold mt-2" style="line-height: 1;">{{ data.value.like }}</div>
+      </div>   
+      <div class="col">
+        <!-- <a target="_blank" rel="noopener noreferrer" href="{{ data.value.fileUrl }}" style="text-decoration: none"> -->
+            <a (click)="openFile(data.value.fileUrl, content)" style="text-decoration: none; cursor: pointer;">
+          
+        <div class="font-weight-bold text-dark" style="line-height: 1;">
+          <span style="font-size: 2em;">
+            <i class="fas fa-file-alt"></i>
+          </span>
+        </div>
+        <div class="font-weight-bold text-dark mt-2" style="line-height: 1;">เอกสาร</div>
+        <!-- <p class="text-danger">{{ printerr }}</p> -->
+        </a>
+      </div> 
+  </div>
+
+  </div>
+</div>
+<!-- CARD LOOP DATA -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">แจ้งเตือน</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          คุณต้องการลบข้อมูล
+        </div>
+        <div class="modal-footer">
+          <button type="button" routerLink="/announce-list" (click)="announceRemove()" class="btn btn-primary" data-dismiss="modal">ตกลง</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="modalRef.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+      </div>
+    </div> -->
+
+</div>
+    
