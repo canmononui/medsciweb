@@ -1,0 +1,47 @@
+[debug] [2019-07-21T12:06:49.467Z] ----------------------------------------------------------------------
+[debug] [2019-07-21T12:06:49.469Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\canmo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-07-21T12:06:49.469Z] CLI Version:   7.1.1
+[debug] [2019-07-21T12:06:49.469Z] Platform:      win32
+[debug] [2019-07-21T12:06:49.469Z] Node Version:  v8.9.3
+[debug] [2019-07-21T12:06:49.470Z] Time:          Sun Jul 21 2019 19:06:49 GMT+0700 (SE Asia Standard Time)
+[debug] [2019-07-21T12:06:49.470Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-21T12:06:49.482Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-21T12:06:49.483Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Desktop\MedSciWeb\medsci-web
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using medscinu-389eb.
+[debug] [2019-07-21T12:07:46.169Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-21T12:07:46.170Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-21T12:07:46.722Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-21T12:07:46.786Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/medscinu-389eb  
+ 
+[debug] [2019-07-21T12:07:47.721Z] <<< HTTP RESPONSE 200
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
